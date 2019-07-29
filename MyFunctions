@@ -1,0 +1,4 @@
+-- Converting Calendar Year month to Fiscal Year Month (Jun is the start)
+--Ex: invoice_yyyymm==201908==> 2020 Year 01  
+case when cast(substring(Ex: invoice_yyyymm==,5,2) as int)>6 then cast(substring(invoice_yyyymm,1,4) as int)+1 else cast(substring(invoice_yyyymm,1,4) as int) end as fisc_year ,
+ case when cast(substring(invoice_yyyymm,5,2) as int)=7 then 1 else (cast(substring(invoice_yyyymm,5,2) as int)+5) % 12 end as fisc_month,
