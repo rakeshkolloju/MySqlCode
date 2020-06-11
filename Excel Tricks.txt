@@ -1,0 +1,2 @@
+1. Append Charecters like "'"  Formula= "'"&A1&"'"
+2. Joins all the rows into one column. Formula =TEXTJOIN(",",FALSE,B1:B6)
