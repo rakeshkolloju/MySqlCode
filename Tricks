@@ -1,0 +1,11 @@
+
+Self Join 
+
+
+Customers living in the same ciry
+Temparature Comparision between Consecutive days.. etc
+Finding Employees who are in the same project
+
+select p.title ,e.first_name from (select distinct ep1.project_id,ep1.employee_id from employees_projects ep1 join employees_projects ep2 on ep1.project_id =ep2.project_id
+and ep1.employee_id<>ep2.employee_id)x join projects p on x.project_id=p.id
+join employees e on e.id=x.employee_id
